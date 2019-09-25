@@ -1,12 +1,12 @@
-import csv
+def data_connect():
 
-def user_open():
+    import mysql.connector
 
-    with open ('/Users/detreox/Desktop/repo/pygame/LoginApp/users.csv', 'r', encoding= 'utf-8-sig') as file:
-        reader = csv.reader(file)
+    mydb = mysql.connector.connect(host = "localhost", user = "root", passwd = "Durks.321", database = "login")
 
-        for row in reader:
-            print(row)
+    mycursor = mydb.cursor()
 
-user_open()
+    mycursor.execute("select user_name from user_login")
 
+    for i in mycursor:
+        print(i)
