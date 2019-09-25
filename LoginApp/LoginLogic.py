@@ -11,7 +11,7 @@ def data_connect(username,password):
     result = cursor.fetchall()
     if result:
         for i in result:
-            print("Welcome " + i[1])
+            print("Welcome Back " + i[1])
             break
     else:
         print("Username and password combination not recognized.")
