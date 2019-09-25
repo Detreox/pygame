@@ -4,9 +4,21 @@ def data_connect():
 
     mydb = mysql.connector.connect(host = "localhost", user = "root", passwd = "Durks.321", database = "login")
 
-    mycursor = mydb.cursor()
+    cursor = mydb.cursor()
+   
 
-    mycursor.execute("select user_name from user_login")
+    cursor.execute("select user_name from user_login")
+    result = cursor.fetchone()
+    
 
-    for i in mycursor:
+    for i in result:
         print(i)
+        
+     
+
+    
+    
+    
+
+
+
