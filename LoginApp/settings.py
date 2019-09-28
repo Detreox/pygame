@@ -36,5 +36,3 @@ def setting():
                     print("Coming Soon.")
                 else:
                     print("Enter one of the numbers listed above.")
-
-setting()
