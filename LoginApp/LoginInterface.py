@@ -1,3 +1,4 @@
+
 from tkinter import *
 
 import logindatabase
@@ -5,7 +6,7 @@ import logindatabase
 #WINDOW PANE
 window = Tk()
 window.title("Login")
-window.geometry("500x500")
+window.geometry("500x400")
 window.resizable(0, 0)
 
 #BUTTON ACTION
@@ -30,6 +31,9 @@ passentry.grid(row = 1, column = 3)
 passentry.config(show = "*")
 
 #LOGIN BUTTON
+Button(window, text = "LOGIN", font=40, width = 6, command = click).grid(row = 5, column = 3)
+
+#REGISTER BUTTON
 Button(window, text = "LOGIN", font=40, width = 6, command = click).grid(row = 5, column = 3)
 
 window.mainloop() 

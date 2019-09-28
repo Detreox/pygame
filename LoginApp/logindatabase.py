@@ -1,4 +1,3 @@
-
 def login(username, password):
 
     #MYSQL connector and connection.
