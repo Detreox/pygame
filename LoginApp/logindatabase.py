@@ -2,7 +2,7 @@ def login(username, password):
 
     #MYSQL connector and connection.
     import mysql.connector
-    mydb = mysql.connector.connect(host = "localhost", user = "root", passwd = "Durks.321", database = "login")
+    mydb = mysql.connector.connect(host = "35.229.93.150", user = "root", passwd = "Durks.321", database = "app_login")
 
     #Create cursor.
     cursor = mydb.cursor()
