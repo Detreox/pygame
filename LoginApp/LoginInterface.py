@@ -1,43 +1,39 @@
-import tkinter as tk
 
-HEIGHT = 500
-WIDTH = 600
+from tkinter import *
 
+import logindatabase
 
+#WINDOW PANE
+window = Tk()
+window.title("Login")
+window.geometry("500x400")
+window.resizable(0, 0)
 
+#BUTTON ACTION
+def click():
+        username = userentry.get()
+        password = passentry.get()
+        logindatabase.login(username, password)  
+        userentry.delete(0, END)
+        passentry.delete(0, END)
 
-def btnpress(urs,pws):
-    print("Button Clicked!")
-    print(urs)
-    print(pws)
+#USERNAME LABEL
+Label (window, text="Username", fg = "black").grid(row = 0, column = 2)
+#PASSWORD LABEL
+Label (window, text="Password", fg = "black").grid(row = 1, column = 2)
 
+#USERNAME ENTRY
+userentry = Entry(window, width = 20, bg = "white")
+userentry.grid(row = 0, column = 3)
+#PASSWORD ENTRY
+passentry = Entry(window, width = 20, bg = "white")
+passentry.grid(row = 1, column = 3)
+passentry.config(show = "*")
 
-root = tk.Tk()
+#LOGIN BUTTON
+Button(window, text = "LOGIN", font=40, width = 6, command = click).grid(row = 5, column = 3)
 
-canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
-canvas.pack()
+#REGISTER BUTTON
+Button(window, text = "LOGIN", font=40, width = 6, command = click).grid(row = 5, column = 3)
 
-label = tk.LabelFrame(root, text="Username")
-label.place(relx=0.05, rely=0.05, relwidth=0.15, relheight=0.05)
-
-
-label = tk.LabelFrame(root, text="Passworld")
-label.place(relx=0.05, rely=0.10, relwidth=0.15, relheight=0.05)
-
-def Uname():
- urs = tk.Entry(root)
- urs.place(relx=0.20, rely=0.05, relwidth=0.15, relheight=0.05)
- urs.get()
-def Upass():
- pws = tk.Entry(root)
- pws.place(relx=0.20, rely=0.10, relwidth=0.15, relheight=0.05)
- pws.get()
-
-button = tk.Button(root, text="Log In", command=btnpress)
-button.pack()
-
-Uname()
-Upass()
-
-
-root.mainloop()
+window.mainloop() 
