@@ -20,6 +20,7 @@ def login(username, password):
     if result:
         for i in result:
             print("Welcome Back " + i[1] + ".")
+            mydb.close
             loggedin.logged()
             break
     else:
@@ -50,6 +51,7 @@ def login(username, password):
                     if result:
                         for j in result:
                             print("Welcome " + j[1])
+                            mydb.close
                             loggedin.logged()
                             break
             else:

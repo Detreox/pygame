@@ -1,3 +1,6 @@
+  #Setting - Password change, Username change, Background change.
+  #Delete User.
+import settings
 import mysql.connector
 
 def logged():
@@ -7,14 +10,24 @@ def logged():
 
     delete_user = ("DELETE FROM user_login WHERE user_name = %s")
 
-    delete = input("Would you like to delete your account? y/n \n")
-    if delete == 'y':
-        username = input("Enter your account name to confirm:  \n")
-        cursor.execute(delete_user, [(username)])
-        db.commit()
-    else:
-        exit
-
-
-    
-    
+    loop = 1
+    while loop == 1:
+        print("Main menu: ")
+        choice = input("1. Settings \n2. Delete User \n3. Exit \nEnter a Number from the menu: \n")
+        if choice == '1':
+            loop = 0
+            db.close
+            settings.setting()
+        else:
+            if choice == '2':
+                loop = 0
+                db.close
+                user = input("Please enter your username to confirm: \n")
+                cursor.execute(delete_user, [(user)])
+            else:
+                if choice == '3':
+                    loop = 0
+                    db.close
+                    exit
+                else:
+                    print("Enter one of the numbers listed above.")
