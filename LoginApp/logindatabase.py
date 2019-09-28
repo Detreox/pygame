@@ -1,7 +1,9 @@
+import loggedin
+import mysql.connector
+
 def login(username, password):
 
     #MYSQL connector and connection.
-    import mysql.connector
     mydb = mysql.connector.connect(host = "35.229.93.150", user = "root", passwd = "Durks.321", database = "app_login")
 
     #Create cursor.
@@ -18,6 +20,7 @@ def login(username, password):
     if result:
         for i in result:
             print("Welcome Back " + i[1] + ".")
+            loggedin.logged()
             break
     else:
         #If username and password does not match, ask user to create a new account.
@@ -47,6 +50,7 @@ def login(username, password):
                     if result:
                         for j in result:
                             print("Welcome " + j[1])
+                            loggedin.logged()
                             break
             else:
                 loop = 0
