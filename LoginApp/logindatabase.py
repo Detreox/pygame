@@ -31,6 +31,7 @@ def login(username, password):
                 password = input("Enter new Password: ")
                 cursor.execute(new_user, [(username)])
                 result = cursor.fetchall()
+                loop = 0
                 if result:
                     for k in result:
                         answer = input("Account already exists. Would you like to try again? y/n: \n")
