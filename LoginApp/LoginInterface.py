@@ -27,12 +27,12 @@ def reg():
         #PASSWORD LABEL
         Label (register, text="Password", fg = "black").grid(row = 1, column = 2)
 
-        userentry = Entry(register, width = 20, bg = "white")
-        userentry.grid(row = 0, column = 3)
+        userregentry = Entry(register, width = 20, bg = "white")
+        userregentry.grid(row = 0, column = 3)
 
-        passentry = Entry(register, width = 20, bg = "white")
-        passentry.grid(row = 1, column = 3)
-        passentry.config(show = "*")
+        passregentry = Entry(register, width = 20, bg = "white")
+        passregentry.grid(row = 1, column = 3)
+        passregentry.config(show = "*")
 
         Button(window, text = "REGISTER", font=40, width = 6, command = log).grid(row = 5, column = 3)
 
