@@ -17,6 +17,7 @@ def log():
         passentry.delete(0, END)
 
 def reg():
+        window.destroy()
         register = Tk()
         register.title("Register")
         register.geometry("500x400")
@@ -34,7 +35,7 @@ def reg():
         passregentry.grid(row = 1, column = 3)
         passregentry.config(show = "*")
 
-        Button(window, text = "REGISTER", font=40, width = 6, command = log).grid(row = 5, column = 3)
+        Button(register, text = "REGISTER", font=40, width = 6, command = log).grid(row = 5, column = 3)
 
 
 
